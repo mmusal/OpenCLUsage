@@ -1,7 +1,7 @@
 # OpenCL Usage
 Learning how to use OpenCL and its properties on STAN.
 This file is going to contain descriptions, code snippets, experiments and explanations of how to use OpenCl to make use of GPU for the purpose of learning HPC via STAN. 
-I am using an Ubuntu 20.04 LTS workstation. There are two graphic processing units on it. 
+I am using an Ubuntu 20.04 LTS workstation. There are two graphic processing units on it however since we need to present our hardware for comparison purposes we consult https://livingthelinuxlifestyle.wordpress.com/2019/08/19/how-to-use-the-lshw-command-to-view-computer-hardware-in-linux/ to understand the machine we are working on. 
 
 The first thing to remember is that just because you have a GPU does not mean your STAN program is going to run faster. GPU s are useful for matrix operations. If your program does not have matrix operations that feed into the processors of the GPU which speed up computations there is no reason for your calculations to be done faster.    
 0) Particulars of STAN
