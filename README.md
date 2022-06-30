@@ -26,11 +26,11 @@ sudo lshw -short -class memory
 /0/9/7                                    memory         32GiB DIMM DDR4 Synchronous Unbuffered (Unregistered) 3200 MHz (0.3 ns)
 
 
-#Graphics cards
-clinfo --human --list
-Platform #0: NVIDIA CUDA
- +-- Device #0: NVIDIA GeForce RTX 3090
- `-- Device #1: NVIDIA GeForce RTX 3090
+#Graphics cards  
+clinfo --human --list  
+Platform #0: NVIDIA CUDA  
+ +-- Device #0: NVIDIA GeForce RTX 3090  
+ `-- Device #1: NVIDIA GeForce RTX 3090  
 
 The first thing to remember is that just because you have a GPU does not mean your STAN program is going to run faster. GPU s are useful for matrix operations. If your program does not have matrix operations that feed into the processors of the GPU which speed up computations there is no reason for your calculations to be done faster.    
 0) Particulars of STAN
