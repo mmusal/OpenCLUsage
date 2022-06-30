@@ -1,7 +1,28 @@
 # OpenCL Usage
 Learning how to use OpenCL and its properties on STAN.
 This file is going to contain descriptions, code snippets, experiments and explanations of how to use OpenCl to make use of GPU for the purpose of learning HPC via STAN. 
-I am using an Ubuntu 20.04 LTS workstation. There are two graphic processing units on it however since we need to present our hardware for comparison purposes we consult https://livingthelinuxlifestyle.wordpress.com/2019/08/19/how-to-use-the-lshw-command-to-view-computer-hardware-in-linux/ to understand the machine we are working on. 
+I am using an Ubuntu 20.04 LTS workstation. We need to present our hardware for comparison purposes we consult https://livingthelinuxlifestyle.wordpress.com/2019/08/19/how-to-use-the-lshw-command-to-view-computer-hardware-in-linux/ and https://manpages.ubuntu.com/manpages/bionic/man1/clinfo.1.htmlto understand the machine we are working on. 
+
+#CPU
+sudo lshw -short -class processor
+AMD Ryzen Threadripper 3990X 64-Core Processor
+#RAM
+sudo lshw -short -class memory
+/0/9                                      memory         256GiB System Memory
+/0/9/0                                    memory         32GiB DIMM DDR4 Synchronous Unbuffered (Unregistered) 3200 MHz (0.3 ns)
+/0/9/1                                    memory         32GiB DIMM DDR4 Synchronous Unbuffered (Unregistered) 3200 MHz (0.3 ns)
+/0/9/2                                    memory         32GiB DIMM DDR4 Synchronous Unbuffered (Unregistered) 3200 MHz (0.3 ns)
+/0/9/3                                    memory         32GiB DIMM DDR4 Synchronous Unbuffered (Unregistered) 3200 MHz (0.3 ns)
+/0/9/4                                    memory         32GiB DIMM DDR4 Synchronous Unbuffered (Unregistered) 3200 MHz (0.3 ns)
+/0/9/5                                    memory         32GiB DIMM DDR4 Synchronous Unbuffered (Unregistered) 3200 MHz (0.3 ns)
+/0/9/6                                    memory         32GiB DIMM DDR4 Synchronous Unbuffered (Unregistered) 3200 MHz (0.3 ns)
+/0/9/7                                    memory         32GiB DIMM DDR4 Synchronous Unbuffered (Unregistered) 3200 MHz (0.3 ns)
+
+#Graphics cards
+clinfo --human --list
+Platform #0: NVIDIA CUDA
+ +-- Device #0: NVIDIA GeForce RTX 3090
+ `-- Device #1: NVIDIA GeForce RTX 3090
 
 The first thing to remember is that just because you have a GPU does not mean your STAN program is going to run faster. GPU s are useful for matrix operations. If your program does not have matrix operations that feed into the processors of the GPU which speed up computations there is no reason for your calculations to be done faster.    
 0) Particulars of STAN
@@ -27,4 +48,30 @@ but in order to run this the things that need to be done:
 a) What type of GPU s do you have? I have NVIDIA 3090 so I need to install CUDA for the OpenCL runtime https://mc-stan.org/docs/2_29/cmdstan-guide/parallelization.html .
 
 c) 
+Without OpenCL
+Elapsed Time: 6370.38 seconds (Warm-up)
+               3109.77 seconds (Sampling)
+               9480.14 seconds (Total)
 
+ Elapsed Time: 6344.14 seconds (Warm-up)
+               3080.23 seconds (Sampling)
+               9424.37 seconds (Total)
+
+
+ Elapsed Time: 5940.8 seconds (Warm-up)
+               3095.2 seconds (Sampling)
+               9036 seconds (Total)
+
+
+############################With OpenCl
+ Elapsed Time: 2340.08 seconds (Warm-up)
+               1187.99 seconds (Sampling)
+               3528.07 seconds (Total)
+
+ Elapsed Time: 2341.58 seconds (Warm-up)
+               1188.26 seconds (Sampling)
+               3529.83 seconds (Total)
+
+ Elapsed Time: 2340.57 seconds (Warm-up)
+               1189.59 seconds (Sampling)
+               3530.17 seconds (Total)
