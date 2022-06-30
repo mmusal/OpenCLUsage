@@ -10,3 +10,7 @@ The first thing to remember is that just because you have a GPU does not mean yo
 4) Why NVIDIA
 5) How to use cmdSTAN
 6) Experimental Results
+#The program to run is:
+for i in {1..3}; do ./rpubsfirststan sample num_warmup=100000 num_samples=50000 data file=./firstopenCL.r output file=output file=withcl_${i} opencl platform=0 device=1 &done
+but in order to run this the things that need to be done:
+
