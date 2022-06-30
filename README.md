@@ -11,6 +11,11 @@ The first thing to remember is that just because you have a GPU does not mean yo
 5) How to use cmdSTAN
 6) Experimental Results
 #The program to run is:
+
 for i in {1..3}; do ./rpubsfirststan sample num_warmup=100000 num_samples=50000 data file=./firstopenCL.r output file=output file=withcl_${i} opencl platform=0 device=1 &done
+
 but in order to run this the things that need to be done:
+a) What type of GPU s do you have? I have NVIDIA 3090 so I need to install CUDA for the OpenCL runtime. .
+b) I am assuming you have already installed STAN.
+c) 
 
