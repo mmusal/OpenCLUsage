@@ -3,11 +3,11 @@ Learning how to use OpenCL and its properties on STAN.
 This file is going to contain descriptions, code snippets, experiments and explanations of how to use OpenCl to make use of GPU for the purpose of learning HPC via STAN. 
 I am using an Ubuntu 20.04 LTS workstation. We need to present our hardware for comparison purposes we consult https://livingthelinuxlifestyle.wordpress.com/2019/08/19/how-to-use-the-lshw-command-to-view-computer-hardware-in-linux/ and https://manpages.ubuntu.com/manpages/bionic/man1/clinfo.1.htmlto understand the machine we are working on. 
 
-#CPU
-sudo lshw -short -class processor
-AMD Ryzen Threadripper 3990X 64-Core Processor
-#RAM
-sudo lshw -short -class memory
+#CPU  
+sudo lshw -short -class processor  
+AMD Ryzen Threadripper 3990X 64-Core Processor  
+#RAM  
+sudo lshw -short -class memory  
 /0/9                                      memory         256GiB System Memory
 /0/9/0                                    memory         32GiB DIMM DDR4 Synchronous Unbuffered (Unregistered) 3200 MHz (0.3 ns)  
 /0/9/1                                    memory         32GiB DIMM DDR4 Synchronous Unbuffered (Unregistered) 3200 MHz (0.3 ns)  
@@ -19,8 +19,8 @@ sudo lshw -short -class memory
 /0/9/7                                    memory         32GiB DIMM DDR4 Synchronous Unbuffered (Unregistered) 3200 MHz (0.3 ns)  
 
 #Graphics cards  
-clinfo --human --list  
-Platform #0: NVIDIA CUDA  
+clinfo --human --list    
+Platform #0: NVIDIA CUDA    
  +-- Device #0: NVIDIA GeForce RTX 3090  
  `-- Device #1: NVIDIA GeForce RTX 3090  
 
