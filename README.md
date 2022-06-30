@@ -55,7 +55,7 @@ but in order to run this the things that need to be done:
 
 a) What type of GPU s do you have? I have NVIDIA 3090 so I need to install CUDA for the OpenCL runtime https://mc-stan.org/docs/2_29/cmdstan-guide/parallelization.html .
 
-c) 
+c) Results from a model with and without OpenCL. Logistic Regression model with 100,000 warmup and 50,000 Sampling iterations. 
 Without OpenCL
 Elapsed Time: 6370.38 seconds (Warm-up)
                3109.77 seconds (Sampling)
@@ -71,7 +71,8 @@ Elapsed Time: 6370.38 seconds (Warm-up)
                9036 seconds (Total)
 
 
-############################With OpenCl
+############################
+With OpenCl
  Elapsed Time: 2340.08 seconds (Warm-up)
                1187.99 seconds (Sampling)
                3528.07 seconds (Total)
