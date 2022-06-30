@@ -24,7 +24,8 @@ Platform #0: NVIDIA CUDA
  +-- Device #0: NVIDIA GeForce RTX 3090  
  `-- Device #1: NVIDIA GeForce RTX 3090  
 
-The first thing to remember is that just because you have a GPU does not mean your STAN program is going to run faster. GPU s are useful for matrix operations. If your program does not have matrix operations that feed into the processors of the GPU which speed up computations there is no reason for your calculations to be done faster.    
+The first thing to remember is that just because you have a GPU does not mean your STAN program is going to run faster. GPU s are useful for matrix operations. If your program does not have matrix operations that feed into the processors of the GPU which speed up computations there is no reason for your calculations to be done faster. The functions that are faster via GPUs and OpenCL without further coding is listed https://mc-stan.org/docs/2_29/stan-users-guide/opencl.html  
+
 0) Particulars of STAN
 1) https://en.wikipedia.org/wiki/CUDA What is CUDA 
    CUDA stands for Compute Unified Device Architecture and is an application programming interface. It allows the usage of GPU resources via C, C++, Fortran. It also supports openCL. It is a propriety framework of NVIDIA 
