@@ -1,4 +1,12 @@
 # OpenCL Usage
+
+# Basic Concepts: 
+Before going into the nitty gritty let us present a very short introduction to CPUs and GPUs. 
+# What is a Central Processing Unit:  
+
+# What is a Graphical Processing Unit: 
+
+# How are they put together:  
 Learning how to use OpenCL and its properties on STAN.
 This file is going to contain descriptions, code snippets, experiments and explanations of how to use OpenCl to make use of GPU for the purpose of learning HPC via STAN. 
 I am using an Ubuntu 20.04 LTS workstation. We need to present our hardware for comparison purposes we consult https://livingthelinuxlifestyle.wordpress.com/2019/08/19/how-to-use-the-lshw-command-to-view-computer-hardware-in-linux/ and https://manpages.ubuntu.com/manpages/bionic/man1/clinfo.1.htmlto understand the machine we are working on. 
