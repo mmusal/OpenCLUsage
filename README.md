@@ -2,8 +2,10 @@
 
 # Basic Concepts: 
 Before going into the nitty gritty let us present a very short introduction to CPUs and GPUs. 
-# What is a Central Processing Unit:  
-
+# What is a Central Processing Unit: 
+A CPU, a general purpose computing device, being the brains of your computer carries out instruction sets which is a machine code. 
+https://www.howtogeek.com/694869/what-is-a-cpu-and-what-does-it-do/  
+A CPU usually has multiple cores common numbers are 4,8.  
 # What is a Graphical Processing Unit: 
 
 # How are they put together:  
