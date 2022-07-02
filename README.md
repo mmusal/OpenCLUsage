@@ -6,7 +6,8 @@ Before going into the nitty gritty let us present a very short introduction to C
 A CPU, a general purpose computing device, being the brains of your computer carries out instruction sets which is a machine code. 
 https://www.howtogeek.com/694869/what-is-a-cpu-and-what-does-it-do/  
 On a laptop a CPU usually has multiple cores common numbers are 2,4,8. Ofcourse on a workstation or server there will be a lot more. Each CPU core has its own set of registeries where calculations can happen. However just because you have more cores does not mean the speed of your procedures will linearly increase.  
-When you have multiple cores as most modern computers do, you need the operating sytem and applications to help.
+When you have multiple cores as most modern computers do, you need the operating sytem and applications to help put the processes together. If you do not have this supporting act then only one CPU is used. 
+
 # What is a Graphical Processing Unit: 
 
 # How are they put together:  
