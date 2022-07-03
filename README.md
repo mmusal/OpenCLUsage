@@ -9,7 +9,7 @@ On a laptop a CPU usually has multiple cores common numbers are 2,4,8. Ofcourse 
 When you have multiple cores as most modern computers do, you need the operating sytem and applications to help put the processes together. If you do not have this supporting act then only one CPU is used. One CPU core is a lot faster than a core in a GPU however there are a lot more cores in a GPU.
 
 # What is a Graphical Processing Unit: 
-
+A GPU is similar to CPU but composed of a lot more 
 # How are they put together:  
 Learning how to use OpenCL and its properties on STAN.
 This file is going to contain descriptions, code snippets, experiments and explanations of how to use OpenCl to make use of GPU for the purpose of learning HPC via STAN. 
