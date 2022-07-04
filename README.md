@@ -116,5 +116,5 @@ The baseline model we have is listed in nogpugeneralinteractionswithspatial.stan
  Elapsed Time: 155.548 seconds (Warm-up)  
                81.305 seconds (Sampling)  
                236.853 seconds (Total)  
-
+As can be seen from this stan program the function to_row_vector is used to identify the correct covariate index. We need to change this because OpenCL does not work with to_row_vector.
 
