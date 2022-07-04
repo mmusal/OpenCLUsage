@@ -106,7 +106,7 @@ for i in {1..3}; do ./rpubsfirststan sample num_warmup=10000 num_samples=5000 da
 
 Now that we have demonstrated the utility of GPUs in our program let us start changing our STAN program we have used in our upcoming paper regarding the effect of social determinants of health on covid mortality in the counties of California.
 # GLM Application Work 
-The baseline model we have is listed in nogpugeneralinteractionswithspatial.stan The model is run for 10,000 warmup and 5,000 sampling iterations.  
+The baseline model we have is listed in nogpugeneralinteractionswithspatial.stan. This model is developed for a particular biweek that recorded mortality figures in Californian counties. The model is run for 10,000 warmup and 5,000 sampling iterations.  
  Elapsed Time: 154.279 seconds (Warm-up)  
                81.201 seconds (Sampling)  
                235.48 seconds (Total)  
@@ -116,5 +116,5 @@ The baseline model we have is listed in nogpugeneralinteractionswithspatial.stan
  Elapsed Time: 155.548 seconds (Warm-up)  
                81.305 seconds (Sampling)  
                236.853 seconds (Total)  
-As can be seen from this stan program the function to_row_vector is used to identify the correct covariate index. We need to change this because OpenCL does not work with to_row_vector.
+As can be seen from this stan program the function to_row_vector is used to identify the correct covariate index. We need to change this because OpenCL does not work with to_row_vector besides even without GPUs if we can vectorize this operation our model should run faster.
 
