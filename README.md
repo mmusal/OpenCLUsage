@@ -44,9 +44,7 @@ The first thing to remember is that just because you have a GPU does not mean yo
    CUDA stands for Compute Unified Device Architecture and is an application programming interface. It allows the usage of GPU resources via C, C++, Fortran. It also supports openCL. It is a propriety framework of NVIDIA 
 2) https://www.khronos.org/events/accelerating-machine-learning-with-opencl openCL stands for Open Computer Language which is a programming framework that allows communication across CPUs and GPUs. OpenCL is not used when the covariate argument to the GLM functions is a row_vector.
 3) CUDA vs OpenCL https://www.run.ai/guides/nvidia-cuda-basics-and-best-practices/cuda-vs-opencl However in order to operate OpenCL you need to install runtime and since we have NVIDIA GPUs we will be using NVIDIA API CUDA. AMD, INTEL has their own software. 
-4) Why NVIDIA
-5) How to use cmdSTAN
-6) Experimental Results
+4) Experimental Results
 First we need to present our hardware that Ubuntu uses. The link https://livingthelinuxlifestyle.wordpress.com/2019/08/19/how-to-use-the-lshw-command-to-view-computer-hardware-in-linux/ specifies useful commands. 
 
 #The program to eventually run on CmdStan obtained from https://mc-stan.org/cmdstanr/articles/opencl.html for a logistic regression model with 150000 iterations where 100000 is warmup:
@@ -106,3 +104,4 @@ for i in {1..3}; do ./rpubsfirststan sample num_warmup=10000 num_samples=5000 da
                119.346 seconds (Sampling)
                355.072 seconds (Total)
 
+Now that we have demonstrated the utility of GPUs in our program let us start changing our STAN program we have used in our upcoming paper regarding the effect of social determinants of health on covid mortality in the counties of California.
