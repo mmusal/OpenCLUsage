@@ -1,4 +1,4 @@
-# OpenCL Usage
+# OpenCL with STAN Usage
 
 # Basic Concepts: 
 Before going into the nitty gritty let us present a very short introduction to CPUs and GPUs. 
@@ -90,3 +90,19 @@ With OpenCl
  Elapsed Time: 2340.57 seconds (Warm-up)
                1189.59 seconds (Sampling)
                3530.17 seconds (Total)
+               
+ When we reduce the number of iterations by an order of 10 via: 
+for i in {1..3}; do ./rpubsfirststan sample num_warmup=10000 num_samples=5000 data file=./firstopenCL.r output file=output file=withcl_${i} opencl platform=0 device=1 &done  
+ the total run time reduces by the same amount. 
+  Elapsed Time: 235.384 seconds (Warm-up)
+               119.256 seconds (Sampling)
+               354.64 seconds (Total)
+
+ Elapsed Time: 235.603 seconds (Warm-up)
+               119.366 seconds (Sampling)
+               354.969 seconds (Total)
+
+ Elapsed Time: 235.726 seconds (Warm-up)
+               119.346 seconds (Sampling)
+               355.072 seconds (Total)
+
