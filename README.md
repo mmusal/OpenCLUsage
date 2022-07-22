@@ -1,11 +1,12 @@
 # OpenCL with STAN Usage
 
 # Basic Concepts: 
-Before going into the nitty gritty let us present a very short introduction to CPUs and GPUs. 
+Before going into details we need a very short introduction to CPUs and GPUs. Floating point and arithmatic logic units are where the calculations are done in a computer. In a modern computer these exist in CPUs and GPUs (FPUs used to be stand alone components). So we should look into their details somewhat before anything else.
+
 # What is a Central Processing Unit: 
-A CPU, a general purpose computing device, being the brains of your computer carries out instruction sets which is a machine code. 
+"A CPU, a general purpose computing device, being the brains of your computer carries out instruction sets which is a machine code." 
 https://www.howtogeek.com/694869/what-is-a-cpu-and-what-does-it-do/  
-On a laptop a CPU usually has multiple cores common numbers are 2,4,8. Ofcourse on a workstation or server there will be a lot more. Each CPU core has its own set of registeries where calculations can happen. However just because you have more cores does not mean the speed of your procedures will linearly increase.  
+On a typical laptop a CPU there usually exists multiple cores. Common numbers of these are 2,4,8. On a workstation or server there will be a lot more. Each CPU core has its own set of registeries where calculations can happen. However just because you have more cores does not mean the speed of your procedures will linearly increase.  
 When you have multiple cores as most modern computers do, you need the operating sytem and applications to help put the processes together. If you do not have this supporting act then only one CPU is used. One CPU core is a lot faster than a core in a GPU however there are a lot more cores in a GPU.
 
 # What is a Graphical Processing Unit: 
@@ -89,7 +90,7 @@ With OpenCl
                1189.59 seconds (Sampling)
                3530.17 seconds (Total)
                
- When we reduce the number of iterations by an order of 10 via: 
+ When we reduce the number of iterations by an order of 10 we see the time adjust linearly: 
 for i in {1..3}; do ./rpubsfirststan sample num_warmup=10000 num_samples=5000 data file=./firstopenCL.r output file=output file=withcl_${i} opencl platform=0 device=1 &done  
  the total run time reduces by the same amount. 
   Elapsed Time: 235.384 seconds (Warm-up)
